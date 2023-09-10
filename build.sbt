@@ -1,7 +1,7 @@
 name := "couchbase"
 organization := "objektwerks"
 version := "0.1-SNAPSHOT"
-scalaVersion := "2.13.11"
+scalaVersion := "2.13.12"
 libraryDependencies ++= {
   Seq(
     "com.couchbase.client" % "java-client" % "2.7.23", // Big changes with version 3.+
