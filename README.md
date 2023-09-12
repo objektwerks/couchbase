@@ -1,6 +1,6 @@
 Couchbase
 ---------
->Couchbase 2 feature tests.
+>Couchbase 2 feature tests using Scala 3.
 
 Install
 -------
