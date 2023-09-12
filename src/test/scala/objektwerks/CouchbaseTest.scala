@@ -11,7 +11,7 @@ import org.scalatest.matchers.should.Matchers
 
 import scala.jdk.CollectionConverters.*
 
-class JavaClientTest extends AnyFunSuite with BeforeAndAfterAll with Matchers:
+class CouchbaseTest extends AnyFunSuite with BeforeAndAfterAll with Matchers:
   val cluster: CouchbaseCluster = CouchbaseCluster.create("127.0.0.1")
 
   override protected def afterAll(): Unit =
