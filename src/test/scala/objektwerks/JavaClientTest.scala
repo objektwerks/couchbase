@@ -9,15 +9,14 @@ import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.BeforeAndAfterAll
 import org.scalatest.matchers.should.Matchers
 
-import scala.jdk.CollectionConverters._
+import scala.jdk.CollectionConverters.*
 
-class JavaClientTest extends AnyFunSuite with BeforeAndAfterAll with Matchers {
+class JavaClientTest extends AnyFunSuite with BeforeAndAfterAll with Matchers:
   val cluster: CouchbaseCluster = CouchbaseCluster.create("127.0.0.1")
 
-  override protected def afterAll(): Unit = {
+  override protected def afterAll(): Unit =
     cluster.disconnect()
     ()
-  }
 
   test("document") {
     val bucket = cluster.openBucket("default")
@@ -38,4 +37,3 @@ class JavaClientTest extends AnyFunSuite with BeforeAndAfterAll with Matchers {
     result.allRows.asScala.foreach(println)
     result.info.resultCount shouldEqual 3
   }
-}
