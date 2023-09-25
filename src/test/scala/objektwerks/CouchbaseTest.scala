@@ -11,14 +11,14 @@ import org.scalatest.matchers.should.Matchers
 
 import scala.jdk.CollectionConverters.*
 
-class CouchbaseTest extends AnyFunSuite with BeforeAndAfterAll with Matchers:
+final class CouchbaseTest extends AnyFunSuite with BeforeAndAfterAll with Matchers:
   val cluster: CouchbaseCluster = CouchbaseCluster.create("127.0.0.1")
 
   override protected def afterAll(): Unit =
     cluster.disconnect()
     ()
 
-  test("document") {
+  test("document"):
     val bucket = cluster.openBucket("default")
     val key = "doc-key"
     val content = JsonObject.create.put("doc-name", "doc-value")
@@ -29,11 +29,9 @@ class CouchbaseTest extends AnyFunSuite with BeforeAndAfterAll with Matchers:
     println(s"found: $found")
     upserted shouldEqual found
     bucket.remove(key)
-  }
 
-  test("query") {
+  test("query"):
     val bucket = cluster.openBucket("travel-sample")
     val result = bucket.query(N1qlQuery.simple("SELECT DISTINCT(country) FROM `travel-sample` WHERE type = 'airline' LIMIT 10"))
     result.allRows.asScala.foreach(println)
     result.info.resultCount shouldEqual 3
-  }
