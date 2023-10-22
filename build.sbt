@@ -6,7 +6,7 @@ libraryDependencies ++= {
   Seq(
     "com.couchbase.client" % "java-client" % "2.7.23", // Big changes with version 3.+!!!
     "ch.qos.logback" % "logback-classic" % "1.4.11",
-    "org.scalatest" %% "scalatest" % "3.2.16" % Test
+    "org.scalatest" %% "scalatest" % "3.2.17" % Test
   )
 }
 scalacOptions ++= Seq(
