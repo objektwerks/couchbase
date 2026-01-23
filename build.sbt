@@ -5,7 +5,7 @@ scalaVersion := "3.8.0-RC6"
 libraryDependencies ++= {
   Seq(
     "com.couchbase.client" % "java-client" % "2.7.23", // Big changes with version 3.+!!!
-    "ch.qos.logback" % "logback-classic" % "1.5.24",
+    "ch.qos.logback" % "logback-classic" % "1.5.25",
     "org.scalatest" %% "scalatest" % "3.2.19" % Test
   )
 }
